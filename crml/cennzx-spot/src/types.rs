@@ -16,7 +16,7 @@
 //!
 //! CENNZX-SPOT Types
 //!
-use benson_primitives::AssetId;
+use benson_primitives::types::AssetId;
 use core::convert::TryInto;
 use uint::construct_uint;
 construct_uint! {

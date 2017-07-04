@@ -18,7 +18,7 @@
 
 use crate::constants::fee::TARGET_BLOCK_FULLNESS;
 use crate::{MaximumBlockWeight, Runtime};
-use benson_primitives::Balance;
+use benson_primitives::types::Balance;
 use generic_asset::StakingAssetCurrency;
 use sr_primitives::traits::{Convert, Saturating};
 use sr_primitives::weights::Weight;

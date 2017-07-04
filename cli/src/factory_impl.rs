@@ -49,10 +49,10 @@ pub struct FactoryState<N> {
 	num: u32,
 }
 
-type Number = <<benson_primitives::Block as BlockT>::Header as HeaderT>::Number;
+type Number = <<benson_primitives::types::Block as BlockT>::Header as HeaderT>::Number;
 
 impl<Number> FactoryState<Number> {
-	fn build_extra(index: benson_primitives::Index, phase: u64) -> benson_runtime::SignedExtra {
+	fn build_extra(index: benson_primitives::types::Index, phase: u64) -> benson_runtime::SignedExtra {
 		(
 			None,
 			system::CheckVersion::new(),
@@ -67,12 +67,12 @@ impl<Number> FactoryState<Number> {
 }
 
 impl RuntimeAdapter for FactoryState<Number> {
-	type AccountId = benson_primitives::AccountId;
-	type Balance = benson_primitives::Balance;
-	type Block = benson_primitives::Block;
+	type AccountId = benson_primitives::types::AccountId;
+	type Balance = benson_primitives::types::Balance;
+	type Block = benson_primitives::types::Block;
 	type Phase = sr_primitives::generic::Phase;
 	type Secret = sr25519::Pair;
-	type Index = benson_primitives::Index;
+	type Index = benson_primitives::types::Index;
 
 	type Number = Number;
 

@@ -22,7 +22,7 @@ use std::sync::Arc;
 
 use babe;
 use benson_executor;
-use benson_primitives::Block;
+use benson_primitives::types::Block;
 use benson_runtime::{GenesisConfig, RuntimeApi};
 use client::{self, LongestChain};
 use grandpa::{self, FinalityProofProvider as GrandpaFinalityProofProvider};
@@ -56,7 +56,7 @@ macro_rules! new_full_start {
 		let inherent_data_providers = inherents::InherentDataProviders::new();
 
 		let builder = substrate_service::ServiceBuilder::new_full::<
-			benson_primitives::Block,
+			benson_primitives::types::Block,
 			benson_runtime::RuntimeApi,
 			benson_executor::Executor,
 		>($config)?
@@ -218,7 +218,7 @@ macro_rules! new_full {
 }
 
 #[allow(dead_code)]
-type ConcreteBlock = benson_primitives::Block;
+type ConcreteBlock = benson_primitives::types::Block;
 #[allow(dead_code)]
 type ConcreteClient = Client<
 	Backend<ConcreteBlock>,
@@ -316,7 +316,7 @@ pub fn new_light<C: Send + Default + 'static>(
 mod tests {
 	use crate::service::new_full;
 	use babe::CompatibleDigestItem;
-	use benson_primitives::{Block, DigestItem};
+	use benson_primitives::types::{Block, DigestItem};
 	use benson_runtime::constants::{asset::SPENDING_ASSET_ID, currency::CENTS, time::SLOT_DURATION};
 	use benson_runtime::{Call, GenericAssetCall, UncheckedExtrinsic};
 	use codec::{Decode, Encode};

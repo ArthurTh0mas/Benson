@@ -16,7 +16,7 @@
 
 //! Test accounts.
 
-use benson_primitives::{AccountId, Balance, Index};
+use benson_primitives::types::{AccountId, Balance, Index};
 use benson_runtime::{CheckedExtrinsic, SessionKeys, SignedExtra, UncheckedExtrinsic};
 use codec::Encode;
 use keyring::{AccountKeyring, Ed25519Keyring, Sr25519Keyring};

@@ -22,7 +22,7 @@
 
 use authority_discovery_primitives::{AuthorityId as EncodedAuthorityId, Signature as EncodedSignature};
 use babe_primitives::{AuthorityId as BabeId, AuthoritySignature as BabeSignature};
-use benson_primitives::{
+use benson_primitives::types::{
 	AccountId, AccountIndex, AssetId, Balance, BlockNumber, Doughnut, Hash, Index, Moment, Signature,
 };
 use cennznut::{CENNZnutV0, Validate};
@@ -525,7 +525,7 @@ impl additional_traits::DelegatedDispatchVerifier<BensonDoughnut> for Runtime {
 construct_runtime!(
 	pub enum Runtime where
 		Block = Block,
-		NodeBlock = benson_primitives::Block,
+		NodeBlock = benson_primitives::types::Block,
 		UncheckedExtrinsic = UncheckedExtrinsic
 	{
 		System: system::{Module, Call, Storage, Config, Event},

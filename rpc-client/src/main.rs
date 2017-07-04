@@ -21,7 +21,7 @@
 //! This module shows how you can write a Rust RPC client that connects to a running
 //! Benson Box and use staticly typed RPC wrappers.
 
-use benson_primitives::Hash;
+use benson_primitives::types::Hash;
 use futures::Future;
 use hyper::rt;
 use jsonrpc_core_client::{transports::http, RpcError};

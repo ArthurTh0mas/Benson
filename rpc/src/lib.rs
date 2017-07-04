@@ -31,7 +31,7 @@
 
 use std::sync::Arc;
 
-use benson_primitives::{AccountId, Balance, Block, Index};
+use benson_primitives::types::{AccountId, Balance, Block, Index};
 use sr_primitives::traits::ProvideRuntimeApi;
 use transaction_pool::txpool::{ChainApi, Pool};
 
