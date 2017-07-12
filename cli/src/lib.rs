@@ -20,10 +20,10 @@
 #![warn(unused_extern_crates)]
 
 pub use cli::error;
-pub mod chain_spec;
 #[macro_use]
-mod service;
+mod chain_spec;
 mod factory_impl;
+mod service;
 
 use crate::factory_impl::FactoryState;
 use cli::{parse_and_prepare, AugmentClap, GetLogFilter, ParseAndPrepare};
@@ -41,10 +41,10 @@ use transaction_factory::RuntimeAdapter;
 pub enum ChainSpec {
 	/// Whatever the current runtime is, with just Alice as an auth.
 	Development,
-	/// Whatever the current runtime is, with simple Alice/Bob auths.
-	LocalTestnet,
-	/// Whatever the current runtime is with the "global testnet" defaults.
-	StagingTestnet,
+	/// The Benson Kauri testnet.
+	BensonKauri,
+	/// The Benson Rimu testnet.
+	BensonRimu,
 }
 
 /// Custom subcommands.
@@ -123,17 +123,17 @@ impl AugmentClap for FactoryCmd {
 impl ChainSpec {
 	pub(crate) fn load(self) -> Result<chain_spec::ChainSpec, String> {
 		Ok(match self {
-			ChainSpec::Development => chain_spec::development_config(),
-			ChainSpec::LocalTestnet => chain_spec::local_testnet_config(),
-			ChainSpec::StagingTestnet => chain_spec::staging_testnet_config(),
+			ChainSpec::Development => chain_spec::dev::config(),
+			ChainSpec::BensonKauri => chain_spec::kauri::config(),
+			ChainSpec::BensonRimu => chain_spec::rimu::config(),
 		})
 	}
 
 	pub(crate) fn from(s: &str) -> Option<Self> {
 		match s {
 			"dev" => Some(ChainSpec::Development),
-			"local" => Some(ChainSpec::LocalTestnet),
-			"staging" => Some(ChainSpec::StagingTestnet),
+			"kauri" => Some(ChainSpec::BensonKauri),
+			"rimu" => Some(ChainSpec::BensonRimu),
 			_ => None,
 		}
 	}
@@ -198,8 +198,11 @@ where
 			};
 
 			match ChainSpec::from(config.chain_spec.id()) {
-				Some(ref c) if c == &ChainSpec::Development || c == &ChainSpec::LocalTestnet => {}
-				_ => panic!("Factory is only supported for development and local testnet."),
+				Some(ref c)
+					if c == &ChainSpec::Development
+						|| c == &ChainSpec::BensonKauri
+						|| c == &ChainSpec::BensonRimu => {}
+				_ => panic!("Factory is only supported for dev, kauri and rimu"),
 			}
 
 			let factory_state = FactoryState::new(cli_args.mode.clone(), cli_args.num, cli_args.rounds);
