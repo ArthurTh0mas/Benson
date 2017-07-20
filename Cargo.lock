@@ -505,6 +505,7 @@ dependencies = [
 name = "benson-primitives"
 version = "1.0.0"
 dependencies = [
+ "parity-scale-codec",
  "pretty_assertions",
  "sr-primitives",
  "srml-support",
