@@ -19,7 +19,7 @@
 use crate::keyring::*;
 use benson_runtime::{
 	constants::{asset::*, currency::*},
-	FeeRate, PerMillion, PerMilli,
+	FeeRate, PerMilli, PerMillion,
 };
 use benson_runtime::{
 	CennzxSpotConfig, ContractsConfig, GenericAssetConfig, GenesisConfig, GrandpaConfig, IndicesConfig, SessionConfig,

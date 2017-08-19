@@ -23,7 +23,7 @@ use benson_runtime::{
 	ElectionsConfig, GenericAssetConfig, GrandpaConfig, ImOnlineConfig, IndicesConfig, SessionConfig, SessionKeys,
 	StakerStatus, StakingConfig, SudoConfig, SystemConfig, TechnicalCommitteeConfig, WASM_BINARY,
 };
-use benson_runtime::{Block, FeeRate, PerMillion, PerMilli};
+use benson_runtime::{Block, FeeRate, PerMilli, PerMillion};
 use chain_spec::ChainSpecExtension;
 use core::convert::TryFrom;
 use grandpa_primitives::AuthorityId as GrandpaId;
