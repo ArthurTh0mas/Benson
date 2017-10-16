@@ -15,7 +15,6 @@
 // along with Benson.  If not, see <http://www.gnu.org/licenses/>.
 
 #![allow(dead_code)]
-#![cfg(test)]
 use benson_runtime::{constants::asset::*, Runtime, VERSION};
 use benson_testing::keyring::*;
 use core::convert::TryFrom;

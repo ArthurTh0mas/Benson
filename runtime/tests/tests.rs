@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Benson.  If not, see <http://www.gnu.org/licenses/>.
 
-#![cfg(test)]
 use benson_primitives::types::{Balance, FeeExchange, FeeExchangeV1};
 use benson_runtime::{
 	constants::asset::*, Call, CennzxSpot, CheckedExtrinsic, Executive, GenericAsset, Origin, Runtime,
@@ -30,6 +29,7 @@ use sp_runtime::{
 	Fixed64,
 };
 
+mod doughnut;
 mod mock;
 use mock::ExtBuilder;
 
