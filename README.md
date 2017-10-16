@@ -1,5 +1,5 @@
 # Benson Box
-[![GitHub license](https://img.shields.io/github/license/ng8eke/benson)](LICENSE) [![CircleCI](https://circleci.com/gh/ng8eke/benson.svg?style=shield)](https://circleci.com/gh/ng8eke/benson) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc)
+[![license: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](LICENSE) [![CircleCI](https://circleci.com/gh/ng8eke/benson.svg?style=shield)](https://circleci.com/gh/ng8eke/benson) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc)
 
 Benson Box based on [Plug](https://github.com/plugblockchain/plug-blockchain)
 
