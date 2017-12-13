@@ -35,6 +35,9 @@ pub type Client = sc_client::Client<
 	benson_runtime::RuntimeApi,
 >;
 
+/// Transaction for node-runtime.
+pub type Transaction = sc_client_api::backend::TransactionFor<Backend, benson_primitives::types::Block>;
+
 /// Genesis configuration parameters for `TestClient`.
 #[derive(Default)]
 pub struct GenesisParameters {
