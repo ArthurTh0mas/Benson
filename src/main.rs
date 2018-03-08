@@ -27,7 +27,7 @@ fn main() -> CliResult<()> {
 		version: env!("CARGO_PKG_VERSION"),
 		executable_name: "benson",
 		author: "Annie Lai <ng8eke@163.com>",
-		description: "Benson Box",
+		description: "Benson Box by Annie Lai Investments UNlimited",
 		support_url: "https://github.com/ng8eke/benson/issues/new",
 		copyright_start_year: 2018,
 	};
