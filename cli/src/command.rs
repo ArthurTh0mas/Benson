@@ -68,8 +68,8 @@ where
 				Some(ref c)
 					if c == &ChainSpec::Development
 						|| c == &ChainSpec::BensonKauri
-						|| c == &ChainSpec::BensonRimu => {}
-				_ => return Err("Factory is only supported for development, kauri and rimu testnet.".into()),
+						|| c == &ChainSpec::BensonAzalea => {}
+				_ => return Err("Factory is only supported for development, kauri and azalea testnet.".into()),
 			}
 
 			// Setup tracing.

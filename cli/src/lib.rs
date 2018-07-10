@@ -21,6 +21,9 @@
 
 #![warn(missing_docs)]
 
+#[macro_use]
+extern crate hex_literal;
+
 pub mod chain_spec;
 
 #[macro_use]
@@ -47,8 +50,8 @@ pub enum ChainSpec {
 	Development,
 	/// The Benson Kauri testnet.
 	BensonKauri,
-	/// The Benson Rimu testnet.
-	BensonRimu,
+	/// The Benson Azalea MainNet
+	BensonAzalea,
 }
 
 /// Get a chain config from a spec setting.
@@ -57,7 +60,7 @@ impl ChainSpec {
 		Ok(match self {
 			ChainSpec::Development => chain_spec::dev::config(),
 			ChainSpec::BensonKauri => chain_spec::kauri::config(),
-			ChainSpec::BensonRimu => chain_spec::rimu::config(),
+			ChainSpec::BensonAzalea => chain_spec::azalea::config(),
 		})
 	}
 
@@ -65,7 +68,7 @@ impl ChainSpec {
 		match s {
 			"dev" => Some(ChainSpec::Development),
 			"kauri" => Some(ChainSpec::BensonKauri),
-			"rimu" => Some(ChainSpec::BensonRimu),
+			"azalea" => Some(ChainSpec::BensonAzalea),
 			_ => None,
 		}
 	}
