@@ -48,8 +48,8 @@ pub use sc_cli::{Result as CliResult, VersionInfo};
 pub enum ChainSpec {
 	/// Whatever the current runtime is, with just Alice as an auth.
 	Development,
-	/// The Benson Kauri testnet.
-	BensonKauri,
+	/// The Benson Nikau testnet.
+	BensonNikau,
 	/// The Benson Azalea MainNet
 	BensonAzalea,
 }
@@ -59,7 +59,7 @@ impl ChainSpec {
 	pub(crate) fn load(self) -> Result<chain_spec::ChainSpec, String> {
 		Ok(match self {
 			ChainSpec::Development => chain_spec::dev::config(),
-			ChainSpec::BensonKauri => chain_spec::kauri::config(),
+			ChainSpec::BensonNikau => chain_spec::nikau::config(),
 			ChainSpec::BensonAzalea => chain_spec::azalea::config(),
 		})
 	}
@@ -67,7 +67,7 @@ impl ChainSpec {
 	pub(crate) fn from(s: &str) -> Option<Self> {
 		match s {
 			"dev" => Some(ChainSpec::Development),
-			"kauri" => Some(ChainSpec::BensonKauri),
+			"nikau" => Some(ChainSpec::BensonNikau),
 			"azalea" => Some(ChainSpec::BensonAzalea),
 			_ => None,
 		}
