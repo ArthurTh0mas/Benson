@@ -22,6 +22,7 @@ RUN apt-get update && \
     ln -s /root/.local/share/benson /data
 
 COPY --from=0 /benson/target/release/benson /usr/local/bin
+COPY --from=0 /benson/genesis /benson/genesis
 EXPOSE 30333 9933 9944
 VOLUME ["/data"]
 ENTRYPOINT ["/usr/local/bin/benson"]
