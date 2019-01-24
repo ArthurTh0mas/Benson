@@ -55,7 +55,7 @@ pub fn make_doughnut(domain: &str, domain_payload: Vec<u8>) -> BensonDoughnut {
 }
 
 fn verify_dispatch(doughnut: &BensonDoughnut, module: &str, method: &str) -> Result<(), &'static str> {
-	<BensonDispatchVerifier as DelegatedDispatchVerifier>::verify_dispatch(doughnut, module, method)
+	<BensonDispatchVerifier as DelegatedDispatchVerifier>::verify_dispatch(doughnut, module, method, vec![])
 }
 
 fn verify_runtime_to_contract(
