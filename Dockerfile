@@ -22,7 +22,10 @@ RUN apt-get update && \
     ln -s /root/.local/share/benson /data
 
 COPY --from=0 /benson/target/release/benson /usr/local/bin
+# copy in genesis files
 COPY --from=0 /benson/genesis /benson/genesis
+# copy in wasm blob
+COPY --from=0 /benson/target/release/wbuild/benson-runtime/benson_runtime.compact.wasm /benson
 EXPOSE 30333 9933 9944
 VOLUME ["/data"]
 ENTRYPOINT ["/usr/local/bin/benson"]
