@@ -13,7 +13,7 @@
 *     https://annie lai.ai/licenses/lgplv3.txt
 */
 
-//! Doughnut integration tests
+//! Doughnut/CENNZnut runtime validation tests
 
 use benson_primitives::types::AccountId;
 use benson_runtime::{impls::BensonDispatchVerifier, BensonDoughnut};
