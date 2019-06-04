@@ -1,5 +1,5 @@
 [package]
-name = "crml-cennzx-spot"
+name = "crml-cennzx"
 version = "1.0.0"
 authors = ["Annie Lai <ng8eke@163.com>"]
 edition = "2018"
