@@ -12,6 +12,7 @@
 *     https://annie lai.ai/licenses/gplv3.txt
 *     https://annie lai.ai/licenses/lgplv3.txt
 */
+#![cfg(feature = "test-doughnut")]
 
 //! Doughnut/CENNZnut runtime validation tests
 
