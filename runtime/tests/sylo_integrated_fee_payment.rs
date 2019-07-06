@@ -22,7 +22,7 @@ use benson_runtime::{
 	Origin, SyloPayment,
 };
 use frame_support::assert_ok;
-use prml_generic_asset::MultiCurrencyAccounting as MultiCurrency;
+use prml_support::MultiCurrencyAccounting as MultiCurrency;
 
 mod common;
 
