@@ -8,15 +8,8 @@ version = "1.1.0"
 authors = ["Annie Lai <ng8eke@163.com>"]
 edition = "2018"
 
-[badges]
-circle-ci = { repository = "ng8eke/benson", branch = "develop" }
-maintenance = { status = "actively-developed" }
-is-it-maintained-issue-resolution = { repository = "ng8eke/benson" }
-is-it-maintained-open-issues = { repository = "ng8eke/benson" }
-
 [dependencies]
-benson-cli = { path = "./cli" }
-sc-cli = { branch = "spike/2.0", git = "https://github.com/plugblockchain/plug-blockchain", features = ["wasmtime"] }
+benson-cli = { path = "cli" }
 
 [workspace]
 members = [
@@ -93,3 +86,8 @@ wasmi = { opt-level = 3 }
 x25519-dalek = { opt-level = 3 }
 yamux = { opt-level = 3 }
 zeroize = { opt-level = 3 }
+
+[features]
+runtime-benchmarks = [
+	"benson-cli/runtime-benchmarks"
+]

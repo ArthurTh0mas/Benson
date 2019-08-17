@@ -45,7 +45,10 @@ native_executor_instance!(
 	pub Executor,
 	benson_runtime::api::dispatch,
 	benson_runtime::native_version,
-	benson_runtime::legacy_host_functions::storage::HostFunctions,
+	(
+		benson_runtime::legacy_host_functions::storage::HostFunctions,
+		frame_benchmarking::benchmarking::HostFunctions,
+	),
 );
 
 type FullClient = sc_service::TFullClient<Block, RuntimeApi, Executor>;
