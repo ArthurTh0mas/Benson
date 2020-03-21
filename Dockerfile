@@ -21,7 +21,7 @@ FROM debian:stretch-slim
 LABEL maintainer="ng8eke@163.com"
 
 RUN apt-get update && \
-    apt-get install -y ca-certificates openssl && \
+    apt-get install -y ca-certificates openssl curl && \
     mkdir -p /root/.local/share/benson && \
     ln -s /root/.local/share/benson /data
 
