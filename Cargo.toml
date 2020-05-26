@@ -88,6 +88,10 @@ yamux = { opt-level = 3 }
 zeroize = { opt-level = 3 }
 
 [features]
+default = []
+quick_staking = [
+	"benson-cli/quick_staking"
+]
 runtime-benchmarks = [
 	"benson-cli/runtime-benchmarks"
 ]
