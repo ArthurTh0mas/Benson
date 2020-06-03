@@ -1,6 +1,6 @@
 [package]
 name = "benson-cli"
-version = "1.3.1"
+version = "1.4.0"
 authors = ["Annie Lai <ng8eke@163.com>"]
 description = "Benson Box implementation in Rust."
 build = "build.rs"
