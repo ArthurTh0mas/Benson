@@ -1,7 +1,9 @@
 # Benson Box
 [![license: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](LICENSE) ![ci status badge](https://github.com/ng8eke/benson/workflows/CI/badge.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc)
 
-Benson Box based on [Plug](https://github.com/plugblockchain/plug-blockchain)
+Benson Box based on [Plug](https://github.com/plugblockchain/plug-blockchain).
+For technical and guides, please refer to the [Benson Wiki](https://wiki.cennz.net/#/).
+
 
 ## Running a Benson Box
 
@@ -69,6 +71,9 @@ $ ./target/release/benson --dev
 ## Contributing
 
 All PRs are welcome! Please follow our contributing guidelines [here](docs/CONTRIBUTING.md).
+
+
+------
 
 ## Community
 
