@@ -75,3 +75,13 @@ jobs:
         asset_path: ./target/debug/wbuild/benson-runtime/benson_runtime.compact.wasm
         asset_name: benson_runtime.compact.wasm
         asset_content_type: application/wasm
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    steps:
+    - uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_MESSAGE: "Release success :rocket:"
+        SLACK_USERNAME: "Benson status"
+        SLACK_ICON_EMOJI: ":white_check_mark:"
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
