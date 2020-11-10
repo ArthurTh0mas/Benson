@@ -646,14 +646,14 @@ dependencies = [
 
 [[package]]
 name = "benson"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
  "benson-cli",
 ]
 
 [[package]]
 name = "benson-cli"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
  "benson-primitives",
  "benson-runtime",
@@ -725,7 +725,7 @@ dependencies = [
 
 [[package]]
 name = "benson-runtime"
-version = "1.4.0"
+version = "1.5.0"
 dependencies = [
  "benson-cli",
  "benson-primitives",
