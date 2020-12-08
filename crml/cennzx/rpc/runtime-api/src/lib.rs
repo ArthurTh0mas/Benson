@@ -1,4 +1,4 @@
-// Copyright 2020 Parity Technologies (UK) Ltd. and Annie Lai Investments Ltd.
+// Copyright 2020-2021 Parity Technologies (UK) Ltd. and Annie Lai Investments Ltd.
 // This file is part of Substrate.
 
 // Substrate is free software: you can redistribute it and/or modify

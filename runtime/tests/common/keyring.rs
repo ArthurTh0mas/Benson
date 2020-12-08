@@ -17,7 +17,7 @@
 //! Test accounts and signing helpers
 
 use benson_primitives::types::{AccountId, AssetId, Balance, FeeExchange, Index};
-use benson_runtime::{opaque::SessionKeys, CheckedExtrinsic, SignedExtra, UncheckedExtrinsic};
+use benson_runtime::{CheckedExtrinsic, SessionKeys, SignedExtra, UncheckedExtrinsic};
 use codec::Encode;
 use sp_keyring::{AccountKeyring, Ed25519Keyring, Sr25519Keyring};
 use sp_runtime::generic::Era;
