@@ -1,0 +1,27 @@
+[package]
+name = "crml-governance"
+version = "2.0.0"
+authors = ["Annie Lai <ng8eke@163.com>"]
+edition = "2018"
+license = "GPL-3.0"
+repository = "https://github.com/ng8eke/benson"
+description = "A runtime module for decentralized governance of the Benson protocol"
+
+[dependencies]
+codec = { version = "2.0.0", package = "parity-scale-codec", default-features = false, features = ["derive"] }
+serde = { version = "1.0.102", optional = true }
+benson-primitives = { path = "../../primitives", default-features = false }
+frame-support = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
+frame-system = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
+sp-std = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
+
+[features]
+default = ["std"]
+std =[
+	"codec/std",
+	"serde/std",
+	"benson-primitives/std",
+	"sp-std/std",
+	"frame-support/std",
+	"frame-system/std",
+]
