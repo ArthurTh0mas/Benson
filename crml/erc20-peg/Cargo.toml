@@ -1,16 +1,22 @@
 [package]
-name = "crml-sylo"
-version = "2.0.0"
-authors = ["Annie Lai <ng8eke@163.com>"]
+name = "crml-erc20-peg"
+version = "1.0.0"
 edition = "2018"
+authors = ["Annie Lai <ng8eke@163.com>"]
+description = "Module for bridging ERC20 tokens"
+license = "GPL-3.0"
 
 [dependencies]
 codec = { version = "2.0.0", package = "parity-scale-codec", default-features = false }
-serde = { version = "1.0.102", default-features = false }
+serde = { version = "1.0.126", default-features = false, optional = true }
+
+benson-primitives = { path = "../../primitives", default-features = false }
+crml-support = { path = "../support", default-features = false }
+
+# Substrate packages
 frame-support = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
 frame-system = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
 sp-core = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
-sp-io = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
 sp-runtime = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
 sp-std = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.0.0-rc7", default-features = false }
 
@@ -18,11 +24,12 @@ sp-std = { git = "https://github.com/plugblockchain/plug-blockchain", rev = "v3.
 default = ["std"]
 std = [
 	"codec/std",
+	"serde",
+	"benson-primitives/std",
+	"crml-support/std",
 	"frame-support/std",
 	"frame-system/std",
 	"sp-core/std",
-	"sp-io/std",
 	"sp-runtime/std",
-	"sp-std/std",
+	"sp-std/std"
 ]
-try-runtime = ["frame-support/try-runtime"]
