@@ -727,7 +727,7 @@ dependencies = [
 
 [[package]]
 name = "benson-cli"
-version = "2.0.0"
+version = "2.0.0-rc1"
 dependencies = [
  "benson-primitives",
  "benson-runtime",
@@ -797,7 +797,7 @@ dependencies = [
 
 [[package]]
 name = "benson-primitives"
-version = "1.0.0"
+version = "2.0.0-rc1"
 dependencies = [
  "frame-support",
  "parity-scale-codec",
@@ -810,7 +810,7 @@ dependencies = [
 
 [[package]]
 name = "benson-runtime"
-version = "2.0.0"
+version = "2.0.0-rc1"
 dependencies = [
  "benson-cli",
  "benson-primitives",
