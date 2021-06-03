@@ -1,92 +1,12 @@
 # Benson Box
 [![license: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](LICENSE) ![ci status badge](https://github.com/ng8eke/benson/workflows/CI/badge.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.adoc)
 
-Benson Box based on [Plug](https://github.com/plugblockchain/plug-blockchain).
-For technical and guides, please refer to the [Benson Wiki](https://wiki.cennz.net/#/).
-
-
-## Running a Benson Box
-
-There are a number of ways to run a Benson Box. Please choose one that suits best for your interest.
-
-### Using Docker
-
-Make sure Docker is installed and running on your machine.
-If you need to install [Docker](https://www.docker.com/), head over to [Docker for Desktop](https://www.docker.com/products/docker-desktop) first, get it installed, create an account and login. Make sure Docker is running in the background.
-
-Now you can proceed to the terminal with the following command:
-
-```
-# Start a local validator on a development chain
-$ docker run \
-    -p 9933:9933 -p 9944:9944 \
-    ng8eke/benson:1.5.1 \
-    --dev \
-    --unsafe-ws-external \
-    --unsafe-rpc-external \
-```
-
-### Using the source code
-
-Follow the steps to build and run a node from the source code.
-
-#### 1. Make sure build environment is set up
-
-For Linux (the example below is for Debian-based machines):
-```
-$ sudo apt install -y build-essential clang cmake gcc git libclang-dev libssl-dev pkg-config
-```
-
-For MacOS (via Homebrew):
-```
-$ brew install openssl cmake llvm
-```
-
-For Windows [TODO: may need a separate link]
-
-#### 2. Install Rust and set up Rust environment
-
-Install Rust on your machine through [here](https://rustup.rs/), and the following rust version and toolchains.
-```
-$ cargo --version
-$ rustup install nightly
-$ rustup target add --toolchain=nightly wasm32-unknown-unknown
-```
-
-#### 3. Build the node Docker image
-
-Prepare your docker engine, and make sure it is running.
-
-```
-# To use the default image name and tag
-$ make 
-
-# To custom your image name and tag
-$ IMAGE_NAME='benson' IMAGE_TAG='v1.5.1' DOCKER_BUILD_ARGS='--no-cache --quiet' make build
-
-# Without using make
-$ docker build --no-cache -t benson:v1.5.1 .
-```
-
-#### 4. Build the node binary and run
-
-Then clone the repo, build the binary and run it.
-```
-$ git clone https://github.com/ng8eke/benson.git
-$ cd benson
-$ cargo build --release
-$ ./target/release/benson --help
-
-# start a validator node for development
-$ ./target/release/benson --dev
-```
-
-------
+Benson Box built on [Substrate](https://github.com/paritytech/substrate).
+For getting started and technical guides, please refer to the [Benson Wiki](https://wiki.cennz.net/#/).
 
 ## Contributing
 
 All PRs are welcome! Please follow our contributing guidelines [here](docs/CONTRIBUTING.md).
-
 
 ------
 
@@ -103,3 +23,69 @@ Join our official Benson Discord server 🤗
 Join the Discord server by clicking on the badge below!
 
 [![Support Server](https://img.shields.io/discord/801219591636254770.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/YX2DNVh89)
+
+### Run with Docker
+
+Use the latest Benson docker image to get started quickly
+```bash
+# Start a local validator on a development chain
+$ docker run \
+    -p 9933:9933 -p 9944:9944 \
+    ng8eke/benson:latest \
+    --dev \
+    --unsafe-ws-external \
+    --unsafe-rpc-external
+```
+
+### Run from Source
+
+Follow the steps to build and run a Benson Box from the source code.
+
+#### 1) Set up build environment
+
+For Linux (the example below is for Debian-based machines):
+```bash
+$ sudo apt install -y build-essential clang cmake gcc git libclang-dev libssl-dev pkg-config
+```
+
+For MacOS (via Homebrew):
+```bash
+$ brew install openssl cmake llvm
+```
+
+#### 2) Install Rust
+
+Install Rust on your machine through [here](https://rustup.rs/), and the following rust version and toolchains.
+```bash
+$ cargo --version
+$ rustup install nightly
+$ rustup target add --toolchain=nightly wasm32-unknown-unknown
+```
+
+#### 3) Build and Run
+
+Clone the repo, build the binary and run it.
+```bash
+$ git clone https://github.com/ng8eke/benson.git
+$ cd benson
+$ cargo build --release # or remove  '--release' for quick debug build
+$ ./target/release/benson --help
+
+# start a validator node for development
+$ ./target/release/benson --dev
+```
+
+### Build Docker Image
+
+Prepare your docker engine, and make sure it is running.
+
+```bash
+# To use the default image name and tag
+$ make 
+
+# To custom your image name and tag
+$ IMAGE_NAME='benson' IMAGE_TAG='v1.5.1' DOCKER_BUILD_ARGS='--no-cache --quiet' make build
+
+# Without using make
+$ docker build --no-cache -t benson:v1.5.1 .
+```
