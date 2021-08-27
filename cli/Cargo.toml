@@ -68,6 +68,7 @@ benson-runtime = { path = "../runtime" }
 crml-eth-bridge = { path = "../crml/eth-bridge" }
 # benson custom RPCs
 crml-cennzx-rpc = { path = "../crml/cennzx/rpc" }
+crml-eth-wallet-rpc = { path = "../crml/eth-wallet/rpc" }
 crml-generic-asset = { path = "../crml/generic-asset" }
 crml-generic-asset-rpc = { path = "../crml/generic-asset/rpc" }
 crml-governance-rpc = { path = "../crml/governance/rpc" }
