@@ -24,7 +24,7 @@ RUN apt-get update && \
     apt-get install -y ca-certificates openssl curl && \
     mkdir -p /root/.local/share/benson && \
     ln -s /root/.local/share/benson /data
-
+# rebuild
 COPY --from=0 /benson/target/release/benson /usr/local/bin
 # copy in genesis files
 COPY --from=0 /benson/genesis /benson/genesis
