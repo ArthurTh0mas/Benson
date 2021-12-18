@@ -2,8 +2,8 @@ FROM  rustlang/rust:nightly AS builder
 WORKDIR /benson
 COPY . /benson
 
-ARG RUST_VERSION=1.54.0
-ARG RUST_NIGHTLY=nightly-2021-08-01
+ARG RUST_VERSION=1.57.0
+ARG RUST_NIGHTLY=nightly-2021-12-23
 RUN apt-get update && \
     apt-get -y install apt-utils cmake pkg-config libssl-dev git clang libclang-dev && \
     rustup uninstall nightly && \
@@ -24,7 +24,7 @@ RUN apt-get update && \
     apt-get install -y ca-certificates openssl curl && \
     mkdir -p /root/.local/share/benson && \
     ln -s /root/.local/share/benson /data
-# rebuild
+
 COPY --from=0 /benson/target/release/benson /usr/local/bin
 # copy in genesis files
 COPY --from=0 /benson/genesis /benson/genesis
